@@ -12,33 +12,32 @@ In my case I am using a Pico 2.
 #include <Mouse.h>
 
 
-// States and declared pins. Pins are constant and are declared as such
-// Pins 1 and 2 on Pico
-const int downPin = 0;
-const int upPin = 1;
-// Buttonstates help read High and Low, and can change
-int buttonState0 = 0;
-int buttonState1 = 0;
+// Pin name cooresponds with pico 2 datasheet
+const int PIN1 = 0;
+const int PIN2 = 1;
+// States match the cooresponding pins
+int State1 = 0;
+int State2 = 0;
 
 
 void setup() {
   // Establishes a serial connection using a "115200" Baud rate, which is default for the Pico 2
   Serial.begin(115200);
   // Establishes pins as inputs
-  pinMode(downPin, INPUT_PULLDOWN);
-  pinMode(upPin, INPUT_PULLDOWN);
+  pinMode(PIN1, INPUT_PULLDOWN);
+  pinMode(PIN2, INPUT_PULLDOWN);
   Mouse.begin();
   delay(5000);
 }
 
 void loop() {
   // Reads States abd performs actions accordingly
-  buttonState0 = digitalRead(downPin);
-  buttonState1 = digitalRead(upPin);
-  if (buttonState0 == HIGH) {
+  State1 = digitalRead(PIN1);
+  State2 = digitalRead(PIN2);
+  if (State1 == HIGH) {
     Mouse.move(0, 0, -1);
   }
-  if (buttonState1 == HIGH) {
+  if (State2 == HIGH) {
     Mouse.move(0, 0, 1);
   }
   else {
