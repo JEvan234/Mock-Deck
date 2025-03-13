@@ -1,4 +1,4 @@
-# Pico-Deck
+# Mock-Deck
 StreamDeck-like functionality, for a fraction of the cost.
 
 ## Bill of Materials:
