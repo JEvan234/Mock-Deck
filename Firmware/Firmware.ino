@@ -12,9 +12,16 @@ In my case I am using a Pico 2.
 #include <Mouse.h>
 
 
-// Pin name cooresponds with pico 2 datasheet
+// Pin name cooresponds with pico 2 datasheet (Refer to attached image)
+// PINS 3/8 are Grounds
 const int PIN1 = 0;
 const int PIN2 = 1;
+const int PIN4 = 2;
+const int PIN5 = 3;
+const int PIN6 = 4;
+const int PIN7 = 5;
+const int PIN9 = 6;
+const int PIN10 = 7;
 // States match the cooresponding pins
 int State1 = 0;
 int State2 = 0;
